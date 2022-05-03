@@ -66,6 +66,7 @@
                             <constraint firstItem="tQO-5q-IRW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uA9-4t-tMl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="eMg-7h-Cig"/>
                     <connections>
                         <outlet property="label" destination="tQO-5q-IRW" id="Yww-rR-dX8"/>
                         <outlet property="slider" destination="Y7k-sV-1ks" id="8J9-MK-tct"/>
@@ -77,8 +78,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="01.square.fill" catalog="system" width="128" height="114"/>
-        <image name="50.square.fill" catalog="system" width="128" height="114"/>
+        <image name="01.square.fill" catalog="system" width="32" height="32"/>
+        <image name="50.square.fill" catalog="system" width="32" height="32"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

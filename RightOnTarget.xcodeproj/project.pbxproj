@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130FE39E281FBEEF00CD971F /* GameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130FE39D281FBEEF00CD971F /* GameRound.swift */; };
+		130FE3A0281FBF0500CD971F /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130FE39F281FBF0500CD971F /* Generator.swift */; };
+		13369B21281DA46000069B17 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13369B20281DA46000069B17 /* Game.swift */; };
 		13FFD0D728168213008FA98D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFD0D628168213008FA98D /* AppDelegate.swift */; };
 		13FFD0D928168213008FA98D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFD0D828168213008FA98D /* SceneDelegate.swift */; };
 		13FFD0DB28168213008FA98D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFD0DA28168213008FA98D /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130FE39D281FBEEF00CD971F /* GameRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRound.swift; sourceTree = "<group>"; };
+		130FE39F281FBF0500CD971F /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		13369B20281DA46000069B17 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		13FFD0D328168213008FA98D /* RightOnTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightOnTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FFD0D628168213008FA98D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FFD0D828168213008FA98D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +82,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13369B1C281DA3BA00069B17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13369B20281DA46000069B17 /* Game.swift */,
+				130FE39D281FBEEF00CD971F /* GameRound.swift */,
+				130FE39F281FBF0500CD971F /* Generator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13369B1D281DA3C100069B17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13369B1E281DA3C700069B17 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		13FFD0CA28168213008FA98D = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +129,9 @@
 		13FFD0D528168213008FA98D /* RightOnTarget */ = {
 			isa = PBXGroup;
 			children = (
+				13369B1E281DA3C700069B17 /* Controller */,
+				13369B1D281DA3C100069B17 /* View */,
+				13369B1C281DA3BA00069B17 /* Model */,
 				13FFD0D628168213008FA98D /* AppDelegate.swift */,
 				13FFD0D828168213008FA98D /* SceneDelegate.swift */,
 				13FFD0DA28168213008FA98D /* ViewController.swift */,
@@ -258,8 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13369B21281DA46000069B17 /* Game.swift in Sources */,
 				13FFD0DB28168213008FA98D /* ViewController.swift in Sources */,
 				13FFD0D728168213008FA98D /* AppDelegate.swift in Sources */,
+				130FE3A0281FBF0500CD971F /* Generator.swift in Sources */,
+				130FE39E281FBEEF00CD971F /* GameRound.swift in Sources */,
 				13FFD0D928168213008FA98D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,8 +471,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B59JHR63KH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RightOnTarget/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -450,9 +488,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = Nyurgun.RightOnTarget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,8 +503,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B59JHR63KH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RightOnTarget/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -479,9 +520,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = Nyurgun.RightOnTarget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
