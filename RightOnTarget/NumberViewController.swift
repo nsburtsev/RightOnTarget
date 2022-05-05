@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NumberViewController.swift
 //  RightOnTarget
 //
 //  Created by Нюргун on 25.04.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NumberViewController: UIViewController {
     
     // сущность "Игра"
     var game: Game!
@@ -44,6 +44,10 @@ class ViewController: UIViewController {
         }
         // обновляем данные о текущем значении загаданного числа
         updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
+    }
+    
+    @IBAction func returnButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Обновление View
