@@ -18,14 +18,12 @@ class MainViewController: UIViewController {
     
     @IBAction func colorGameButtonPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier:
-        "ColorViewController")
+        let viewController = storyboard.instantiateViewController(identifier: "ColorViewController")
         self.present(viewController, animated: true, completion: nil)
     }
     @IBAction func numberGameButtonPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier:
-        "NumberViewController")
+        let viewController = storyboard.instantiateViewController(identifier: "NumberViewController")
         self.present(viewController, animated: true, completion: nil)
     }
 }

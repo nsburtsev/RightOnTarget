@@ -4,63 +4,63 @@
 //
 //  Created by Нюргун on 01.05.2022.
 //
+//  Сущность "Игра"
 
 import UIKit
 
+/// протокол, определяющий требования к классу Game
 protocol GameProtocol {
+    associatedtype SecretType
     // количество заработанных очков
     var score: Int { get }
-    // текущий раунд
-    var currentRound: GameRoundProtocol! { get }
-    // проверяет, закончена ли игра
+    // секретное число
+    var secretValue: SecretType { get }
+    // проверяет, окончена ли игра
     var isGameEnded: Bool { get }
-    // генератор случайного значени
-    var secretValueGenerator: GeneratorProtocol { get }
     // начинает новую игру и сразу стартует первый раунд
     func restartGame()
-    // начинает новый раунд (обновляет загадочное число)
+    // начинает новый раунд
     func startNewRound()
+    // сравнение значения пользователя с загаданным и подсчет очков
+    func calculateScore(secretValue: SecretType, userValue: SecretType)
 }
 
-class Game: GameProtocol {
-    var score: Int {
-        var totalScore: Int = 0
-        for round in self.rounds {
-            totalScore += round.score
-        }
-        return totalScore
-    }
-    var currentRound: GameRoundProtocol!
-    private var rounds: [GameRoundProtocol] = []
-    var secretValueGenerator: GeneratorProtocol
+class Game<T: SecretValueProtocol>: GameProtocol {
+    typealias SecretType = T
+    var score: Int = 0
+    // секретное значение
+    var secretValue: T
+    // замыкание производит сравнение значений и возвращает заработанные очки
+    private var compareClosure: (T, T) -> Int
     private var roundsCount: Int!
+    private var currentRoundNumber: Int = 0
     var isGameEnded: Bool {
-        if roundsCount == rounds.count {
+        if currentRoundNumber == roundsCount {
             return true
         } else {
             return false
         }
     }
     
-    init(valueGenerator: GeneratorProtocol, rounds: Int) {
-        secretValueGenerator = valueGenerator
+    init(secretValue: T, rounds: Int, compareClosure: @escaping (T, T) -> Int) {
+        self.secretValue = secretValue
         roundsCount = rounds
+        self.compareClosure = compareClosure
         startNewRound()
     }
     
     func restartGame() {
-        rounds = []
+        score = 0
+        currentRoundNumber = 0
         startNewRound()
     }
     
     func startNewRound() {
-        let newSecretValue = self.getNewSecretValue()
-        currentRound = GameRound(secretValue: newSecretValue)
-        rounds.append( currentRound )
+        currentRoundNumber += 1
+        self.secretValue.setRandomValue()
     }
     
-    // загадать и вернуть новое случайное значение
-    private func getNewSecretValue() -> Int {
-        return secretValueGenerator.getRandomValue()
+    func calculateScore(secretValue: T, userValue: T) {
+        score = score + compareClosure(secretValue, userValue)
     }
 }

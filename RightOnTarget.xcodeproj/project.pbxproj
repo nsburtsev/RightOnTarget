@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		130FE39E281FBEEF00CD971F /* GameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130FE39D281FBEEF00CD971F /* GameRound.swift */; };
-		130FE3A0281FBF0500CD971F /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130FE39F281FBF0500CD971F /* Generator.swift */; };
 		13369B21281DA46000069B17 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13369B20281DA46000069B17 /* Game.swift */; };
 		13B7DF5C2823B288004F7FB7 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7DF5B2823B288004F7FB7 /* ColorViewController.swift */; };
 		13B7DF5E2823B2AB004F7FB7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7DF5D2823B2AB004F7FB7 /* MainViewController.swift */; };
+		13F7145A2823D55F00B953C1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F714592823D55F00B953C1 /* Color.swift */; };
+		13F7145C2823D56D00B953C1 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F7145B2823D56D00B953C1 /* GameFactory.swift */; };
+		13F7145E2823D57700B953C1 /* SecretValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F7145D2823D57700B953C1 /* SecretValue.swift */; };
 		13FFD0D728168213008FA98D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFD0D628168213008FA98D /* AppDelegate.swift */; };
 		13FFD0D928168213008FA98D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFD0D828168213008FA98D /* SceneDelegate.swift */; };
 		13FFD0DB28168213008FA98D /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FFD0DA28168213008FA98D /* NumberViewController.swift */; };
@@ -41,11 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		130FE39D281FBEEF00CD971F /* GameRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRound.swift; sourceTree = "<group>"; };
-		130FE39F281FBF0500CD971F /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		13369B20281DA46000069B17 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		13B7DF5B2823B288004F7FB7 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		13B7DF5D2823B2AB004F7FB7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		13F714592823D55F00B953C1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		13F7145B2823D56D00B953C1 /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
+		13F7145D2823D57700B953C1 /* SecretValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretValue.swift; sourceTree = "<group>"; };
 		13FFD0D328168213008FA98D /* RightOnTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightOnTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FFD0D628168213008FA98D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FFD0D828168213008FA98D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,9 +91,10 @@
 		13369B1C281DA3BA00069B17 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				13F714592823D55F00B953C1 /* Color.swift */,
 				13369B20281DA46000069B17 /* Game.swift */,
-				130FE39D281FBEEF00CD971F /* GameRound.swift */,
-				130FE39F281FBF0500CD971F /* Generator.swift */,
+				13F7145B2823D56D00B953C1 /* GameFactory.swift */,
+				13F7145D2823D57700B953C1 /* SecretValue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,11 +302,12 @@
 			files = (
 				13369B21281DA46000069B17 /* Game.swift in Sources */,
 				13FFD0DB28168213008FA98D /* NumberViewController.swift in Sources */,
+				13F7145A2823D55F00B953C1 /* Color.swift in Sources */,
 				13FFD0D728168213008FA98D /* AppDelegate.swift in Sources */,
-				130FE3A0281FBF0500CD971F /* Generator.swift in Sources */,
 				13B7DF5C2823B288004F7FB7 /* ColorViewController.swift in Sources */,
-				130FE39E281FBEEF00CD971F /* GameRound.swift in Sources */,
 				13FFD0D928168213008FA98D /* SceneDelegate.swift in Sources */,
+				13F7145E2823D57700B953C1 /* SecretValue.swift in Sources */,
+				13F7145C2823D56D00B953C1 /* GameFactory.swift in Sources */,
 				13B7DF5E2823B2AB004F7FB7 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

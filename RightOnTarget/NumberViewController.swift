@@ -9,22 +9,20 @@ import UIKit
 
 class NumberViewController: UIViewController {
     
-    // сущность "Игра"
-    var game: Game!
+    // экземпляр игры с числами
+    var game: Game<SecretNumericValue>!
     
+    // элементы на сцене
     @IBOutlet var slider: UISlider!
-    @IBOutlet var label: UILabel!
+    @IBOutlet var secretValueLabel: UILabel!
     
     // MARK: - Жизненный цикл
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // создаем генератор случайных чисел
-        let generator = NumberGenerator(startValue: 1, endValue: 50)!
-        // создаем сущность игра
-        game = Game(valueGenerator: generator, rounds: 5)
+        game = (GameFactory.getNumericGame() as! Game<SecretNumericValue>)
         // обновляем данные о текущем значении загаданного числа
-        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.secretValue.value))
     }
     
     // MARK: - Взаимодействие View - Model
@@ -32,18 +30,21 @@ class NumberViewController: UIViewController {
     // проверка выбранного пользователем числа
     @IBAction func checkNumber() {
         // высчитываем очки за раунд
-        game.currentRound.calculateScore(with: Int(slider.value))
-        // проверяем окончена ли игра
-        if game.isGameEnded{
+        var userSecretValue = game.secretValue
+        userSecretValue.value = Int(slider.value)
+        game.calculateScore(secretValue: game.secretValue, userValue: userSecretValue)
+        // проверяем, окончена ли игра
+        if game.isGameEnded {
             // показываем окно с итогами
             showAlertWith(score: game.score)
-            // начинаем игру заново
+            // рестартуем игру
             game.restartGame()
         } else {
+            // начинаем новый раунд игры
             game.startNewRound()
         }
         // обновляем данные о текущем значении загаданного числа
-        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.secretValue.value))
     }
     
     @IBAction func returnButtonPressed(_ sender: UIButton) {
@@ -52,9 +53,9 @@ class NumberViewController: UIViewController {
     
     // MARK: - Обновление View
     
-    // Обновление текста загаданного числа
-    private func updateLabelWithSecretNumber(newText: String) {
-        label.text = newText
+    // обновление текста загаданного числа
+    func updateLabelWithSecretNumber(newText: String) {
+        secretValueLabel.text = newText
     }
     
     // отображение всплывающего окна со счетом

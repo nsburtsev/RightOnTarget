@@ -79,7 +79,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="eMg-7h-Cig"/>
                     <connections>
-                        <outlet property="label" destination="tQO-5q-IRW" id="Yww-rR-dX8"/>
+                        <outlet property="secretValueLabel" destination="tQO-5q-IRW" id="Yww-rR-dX8"/>
                         <outlet property="slider" destination="Y7k-sV-1ks" id="8J9-MK-tct"/>
                     </connections>
                 </viewController>
@@ -174,6 +174,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Вариант 1">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="compareValue:" destination="RVN-vY-JGa" eventType="touchUpInside" id="vjX-n8-gtu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGm-n3-1Cd">
                                         <rect key="frame" x="180" y="0.0" width="98" height="32"/>
@@ -182,6 +185,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Вариант 2">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="compareValue:" destination="RVN-vY-JGa" eventType="touchUpInside" id="1gG-8y-3sg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5I-P3-RH1">
                                         <rect key="frame" x="360" y="0.0" width="98" height="32"/>
@@ -190,6 +196,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Вариант 3">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="compareValue:" destination="RVN-vY-JGa" eventType="touchUpInside" id="F38-JI-Jy2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7l-jB-sJi">
                                         <rect key="frame" x="540" y="0.0" width="98" height="32"/>
@@ -198,6 +207,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Вариант 4">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="compareValue:" destination="RVN-vY-JGa" eventType="touchUpInside" id="hVw-8v-Kk1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -220,6 +232,13 @@
                             <constraint firstItem="pSI-Ba-V6g" firstAttribute="centerX" secondItem="obr-PY-BJt" secondAttribute="centerX" id="xdD-YC-9OI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonColor1" destination="Knk-tb-2ZY" id="Q80-my-fV7"/>
+                        <outlet property="buttonColor2" destination="vGm-n3-1Cd" id="zCG-SJ-m37"/>
+                        <outlet property="buttonColor3" destination="N5I-P3-RH1" id="hqp-Mu-BeO"/>
+                        <outlet property="buttonColor4" destination="z7l-jB-sJi" id="yz4-eD-eNK"/>
+                        <outlet property="hexLabel" destination="pSI-Ba-V6g" id="653-4d-Ymk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzr-Rt-Eng" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
